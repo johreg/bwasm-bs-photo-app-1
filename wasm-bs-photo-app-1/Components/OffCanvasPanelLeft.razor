@@ -1,0 +1,61 @@
+﻿<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1  pe-3">
+            <li class="nav-item">
+                <NavLink class="nav-link" href="home" Match="NavLinkMatch.All">
+                    <span class="bi bi-house-door-fill ps-2"></span>  Home
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="myimages">
+                    <span class="bi bi-plus-square-fill ps-2"></span>  My Images
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="counter">
+                    <span class="bi bi-plus-square-fill ps-2"></span>  Counter
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" data-bs-dismiss="offcanvas" href="weather">
+                    <span class="bi bi-plus-square-fill ps-2"></span>  Weather
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" data-bs-dismiss="offcanvas" @onclick='(()=>NavigateAndClose("weather"))' href="javascript:void(0)">
+                    <span class="bi bi-plus-square-fill ps-2"></span>  Weather
+                </NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" data-bs-dismiss="offcanvas" @onclick='(()=>NavigateAndClose("accordion"))' href="javascript:void(0)">
+                    <span class="bi bi-plus-square-fill ps-2"></span>  Accordion
+                </NavLink>
+            </li>
+            <!-- Add other NavLink items here -->
+        </ul> 
+    </div>
+</div>
+
+@code {
+    private async Task NavigateAndClose(string targetUrl)
+    {
+        // Close the offcanvas using Bootstrap's JavaScript Interop
+        await HideOffcanvas();
+
+        // Navigate to the target URL
+        NavigationManager.NavigateTo(targetUrl);
+    }
+
+    private async Task HideOffcanvas()
+    {
+        // Use JS Interop to hide the offcanvas
+        await JSRuntime.InvokeVoidAsync("bootstrap.Offcanvas.getOrCreateInstance", "#offcanvasExample", "hide");
+    }
+
+    [Inject] private NavigationManager NavigationManager { get; set; }
+    [Inject] private IJSRuntime JSRuntime { get; set; }
+}

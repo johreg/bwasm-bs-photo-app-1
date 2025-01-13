@@ -1,0 +1,83 @@
+﻿@using wasm_bs_photo_app_1.Components
+@inherits LayoutComponentBase
+
+
+<div class="page">
+    <!--  <div class="sidebar">
+    <NavMenu />
+     </div>
+     -->
+    <!--     <div class="top-row px-4">
+             <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+         </div>
+         -->
+
+    <nav class="navbar fixed-top bg-light border-bottom">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <!-- Left Section: First two icons -->
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand border rounded px-2"
+                   data-bs-toggle="offcanvas"
+                   href="#offcanvasLeft"
+                   role="button"
+                   aria-controls="offcanvasLeft"
+                   style="margin-left: 7px; padding-top:1px; padding-bottom:1px">☰</a>
+                <a href="#"
+                   data-bs-target="#sidebar"
+                   data-bs-toggle="collapse"
+                   class="border rounded-3 p-1 text-decoration-none ms-2">
+                    <i class="bi bi-folder2-open bi-lg py-2 p-1"></i>
+                </a>
+            </div>
+
+            <!-- Right Section: Third icon
+            <a class="navbar-brand border rounded px-2"
+               data-bs-toggle="offcanvas"
+               href="#offcanvasRight"
+               role="button"
+               aria-controls="offcanvasRight"
+               style="margin-right: 7px; padding-top:1px; padding-bottom:1px">X</a> -->
+        </div>
+    </nav>
+
+    <OffCanvasPanelLeft />
+
+
+    <!--    <LayoutTestBlazorApp.Components.Navigation.OffCanvasPanelRight /> -->
+    <!--   <article class="container mt-5 mb-3 pt-3"> -->
+    <main class="mt-5">
+        @Body
+    </main>
+
+    <!--   </article>  -->
+
+</div>
+
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+
+@code {
+    private bool _firstRender = true;
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine("OnInitialized");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        Console.WriteLine("PPP");
+        // Call the JS function after initial render
+        if (_firstRender)
+        {
+            Console.WriteLine("CCCC");
+
+            _firstRender = false; // Prevent multiple calls during initial load
+                                  //   await jsRuntime.InvokeVoidAsync("reinitializeBootstrap");
+        }
+    }
+}
