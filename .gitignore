@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/wasm-bs-photo-app-1/bin/Debug/net9.0
+/wasm-bs-photo-app-1/.vs/wasm-bs-photo-app-1
+/wasm-bs-photo-app-1/obj
+/wasm-bs-photo-app-1/.vs/ProjectEvaluation
