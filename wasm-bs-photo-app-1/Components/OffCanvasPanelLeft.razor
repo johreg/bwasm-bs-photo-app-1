@@ -35,10 +35,15 @@
                     <span class="bi bi-plus-square-fill ps-2"></span>  Accordion
                 </NavLink>
             </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" data-bs-dismiss="offcanvas" @onclick='(()=>NavigateAndClose("navbarexperiment"))' href="javascript:void(0)">
+                    <span class="bi bi-plus-square-fill ps-2"></span>  Navbar Experiment
+                </NavLink>
+            </li>
             <!-- Add other NavLink items here -->
         </ul> 
     </div>
-</div>
+</div> 
 
 @code {
     private async Task NavigateAndClose(string targetUrl)
