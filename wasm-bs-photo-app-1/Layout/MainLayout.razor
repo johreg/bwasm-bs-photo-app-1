@@ -29,7 +29,7 @@
                     <i class="bi bi-folder2-open bi-lg py-2 p-1"></i>
                 </a>
                 <a class="navbar-brand" href="#">
-                    <img src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="..." height="36">
+                    <img class="navbar-logo" src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="...">
                 </a>
             </div>
 
@@ -73,11 +73,11 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        Console.WriteLine("PPP");
+      //  Console.WriteLine("PPP");
         // Call the JS function after initial render
         if (_firstRender)
         {
-            Console.WriteLine("CCCC");
+          //  Console.WriteLine("CCCC");
 
             _firstRender = false; // Prevent multiple calls during initial load
                                   //   await jsRuntime.InvokeVoidAsync("reinitializeBootstrap");

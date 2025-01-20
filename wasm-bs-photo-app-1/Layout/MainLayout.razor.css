@@ -75,3 +75,16 @@ main {
         padding-right: 1.5rem !important;
     }
 }
+
+.navbar-logo {
+    height: 100%; /* Matches the height of the navbar */
+    max-height: 30px; /* Add a sensible maximum height (optional) */
+    object-fit: contain; /* Ensures the logo is scaled proportionally */
+    display: block; /* Ensures proper spacing and alignment */
+}
+
+.navbar-brand {
+    height: 30px; /* Define a height for the navbar brand */
+    display: flex; /* Centers the content vertically */
+    align-items: center; /* Align logo within the navbar */
+}
