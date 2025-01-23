@@ -1,0 +1,21 @@
+﻿
+
+@page "/myimagestest1/myimage{id:int}"
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <NavLink href="/myimagestest1">myimagestest1</NavLink>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Image @Id</li>
+    </ol>
+</nav>
+
+<img src="@GetImageUrl()" alt="Image @Id" class="img-fluid" />
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private string GetImageUrl() => $"image{Id}.png";
+}

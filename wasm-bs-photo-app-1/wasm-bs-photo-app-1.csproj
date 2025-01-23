@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Pages\MyImagesTest1.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
     <Content Update="Pages\FileManagerTest1.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
