@@ -1,9 +1,9 @@
 ﻿@page "/filemanagertest2"
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container bg-light">
+<div class="container-fluid bg-light">
     <div class="row">
-        <div class="col-sm-3">
+        <div class="col-md-3">
             <div class="panel panel-dark-outline tabs-panel">
            <!--     <div class="panel-heading">
                     <ul class="nav nav-tabs pull-left type-document">
@@ -21,7 +21,7 @@
                         <a class="label label-dark label-left" href="#">Video</a>
                         <div class="clear"></div>
                         <div class="v-spacing-xs"></div>
-                        <h4 class="no-margin-top"> Folders</h4>
+                        <!--    <h4 class="no-margin-top"> Folders</h4> -->
                         <ul class="folders list-unstyled">
                             <li>
                                 <a href="#">
@@ -92,11 +92,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-8 tab-content no-bg no-border">
+        <div class="col-md-9 tab-content no-bg no-border">
             <div class="tab-pane active documents documents-panel">
                 <div class="document success">
-                    <div class="document-body">
-                        <i class="fa fa-file-excel-o text-success"></i>
+                    <div class="document-body ">
+                        <div class="image">
+                            <img alt="image" class="img-fluid" src="camel.jpg">
+                        </div>
                     </div>
                     <div class="document-footer">
                         <span class="document-name"> Excel database 2017 </span>

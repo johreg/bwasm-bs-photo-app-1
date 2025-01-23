@@ -1,0 +1,10 @@
+Kolla upp att han en navbar /filter högst upp för my Images (ok om det scrollar ner), istället för på sidan
+som här: https://dribbble.com/search/shots/popular/?q=full-screen-modal
+eller här: https://getbootstrap.com/docs/5.3/examples/navbars/# (använd centered nav där, kanske? jag har exemplet i VS Code)
+
+utforska denna 
+https://getbootstrap.com/docs/5.3/examples/album/#
+(använda den för pågående tävling också? Med Jombotron, och kunna kommentera och rösta så där, med två knappar? Modal dyker upp
+vid "edit" klick, kanske)
+
+måste kunna editera information,text, namn nominera bilden till tävling osv

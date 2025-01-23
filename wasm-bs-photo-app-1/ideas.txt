@@ -1,1 +1,21 @@
 Filter under my Images (ta fram bilder från avklarade tävlingar, nuvarnade tävlingar osv)
+
+Information på My Images card:
+Layover title
+Footer: (grå bakgrund?) med ikoner
+När man klickar, till subpage med bakåtknapp, som Pintrest? (eller enkel breadcrumb?)
+
+Information på fotots egna sida
+tabs? 
+Breadcrumb? med länk tillbaka till browsning? (Behöver bara vara enkel länk, inget behov av hierarki)
+Total views
+Current competitions, current votes
+Pending for competition
+previous competitions (final nr of votes, comments, feedback)
+Size (KB)
+Länk, gå till tävlingssida fotot var med i?
+Enkel start: Två kolumner, en med bild, en med tabs, för info om "allt" (enkel responsiv lösning, stack)
+Rad över första kolumnen (med bild), med simpel breadcrumb, för att gå tillbaka
+Återanvänd från blazor-foto-2
+En knapp för att ladda upp bilder, till dialog? Där kan man välja ta bild med kamera, eller ladda upp?
+
