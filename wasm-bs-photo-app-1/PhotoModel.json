@@ -1,0 +1,60 @@
+{
+  "id": 1230919123,
+  "ownerUserId": 129837109832091,
+  "originalName": "alksjdlaksjd.png",
+  "currentName": "blabla.png",
+  "userDescription": "fin bild",
+  "sizeKB": 1002,
+  "imageUploadedDatetime": "2025-10-10",
+  "cameraType": "SystemCamera",
+  "UploadSource": "direct photo upload, or upload from disk",
+  "competitions": [
+    {
+      "competitionId": "comp456",
+      "status": "submitted/pending(?)/archived",
+      "approval": "pending(?)",
+      "votes": 42,
+      "myMotivation": "är med i tävling för att.."
+    },
+    {
+      "competitionId": "comp456",
+      "status": "submitted",
+      "votes": 42,
+      "myMotivation": "är med i tävling för att.."
+    }
+  ],
+    "nrOfViews",
+    :,
+    "eller ska detta hämtas någon annanstans? För mycket trafik till MongoDB kanske"
+}
+
+-------------------------------
+//Suggestion by Claude AI
+{
+  "_id": "ObjectId()",
+  "userId": "user123",
+  "competitionId": "comp456",
+  "title": "Sunset at Golden Gate",
+  "tags": [ "landscape", "sunset", "bridge" ],
+  "metadata": {
+    "camera": "Canon EOS R",
+    "location": {
+      "latitude": 37.8199,
+      "longitude": -122.4783
+    }
+  },
+  "feedback": [
+    {
+      "userId": "judge1",
+      "rating": 8.5,
+      "comments": "Excellent composition!"
+    }
+  ],
+  "competitions": [
+    {
+      "competitionId": "comp456",
+      "status": "submitted",
+      "votes": 42
+    }
+  ]
+}

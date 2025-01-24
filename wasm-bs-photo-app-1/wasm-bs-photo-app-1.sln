@@ -11,6 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ideas", "Ideas", "{B83C1251
 		TODO.txt = TODO.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonDataModels", "JsonDataModels", "{FB97095C-4AC9-4F5B-8FCF-2664D14C975D}"
+	ProjectSection(SolutionItems) = preProject
+		PhotoModel.json = PhotoModel.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

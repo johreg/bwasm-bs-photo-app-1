@@ -2,16 +2,64 @@
 
 @page "/myimagestest1/myimage{id:int}"
 
+<div class="p-3">
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <NavLink href="/myimagestest1">myimagestest1</NavLink>
+            
+            <NavLink href="/myimagestest1">
+                    <i class="fa-regular fa-square-caret-left"></i>
+                </NavLink>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Image @Id</li>
     </ol>
 </nav>
 
-<img src="@GetImageUrl()" alt="Image @Id" class="img-fluid" />
+    <!--    <div class="container"> -->
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">
+                    Image
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">
+                    Metadata
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3" type="button" role="tab" aria-controls="tab3" aria-selected="false">
+                    Competitions
+                </button>
+            </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4" type="button" role="tab" aria-controls="tab4" aria-selected="false">
+                Feedback
+            </button>
+        </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myTabContent">
+        <div class="tab-pane show active p-1 justify-content-center " id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                <img src="@GetImageUrl()" alt="Image @Id" class="img-fluid" />
+            </div>
+            <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                <p>This is the content for Tab 2. Include your information here.</p>
+            </div>
+            <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                <p>This is the content for Tab 3. Add whatever content you like.</p>
+            </div>
+        <div class="tab-pane" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+            <p>Feedbac here.</p>
+        </div>
+        </div>
+
+
+
+
+</div>
 
 @code {
     [Parameter]
