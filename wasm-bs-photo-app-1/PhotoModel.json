@@ -7,7 +7,8 @@
   "sizeKB": 1002,
   "imageUploadedDatetime": "2025-10-10",
   "cameraType": "SystemCamera",
-  "UploadSource": "direct photo upload, or upload from disk",
+  "UploadSource": "direct photo upload, or upload from disk", //kanske räcker med tags?
+  "folder": "root/Resa Sri Lanka/Datum X",
   "competitions": [
     {
       "competitionId": "comp456",
@@ -23,9 +24,7 @@
       "myMotivation": "är med i tävling för att.."
     }
   ],
-    "nrOfViews",
-    :,
-    "eller ska detta hämtas någon annanstans? För mycket trafik till MongoDB kanske"
+    "nrOfViews":"eller ska detta hämtas någon annanstans? För mycket trafik till MongoDB kanske"
 }
 
 -------------------------------

@@ -19,3 +19,4 @@ Rad över första kolumnen (med bild), med simpel breadcrumb, för att gå tillbaka
 Återanvänd från blazor-foto-2
 En knapp för att ladda upp bilder, till dialog? Där kan man välja ta bild med kamera, eller ladda upp?
 
+Badges på foto kort? eller under metadata..

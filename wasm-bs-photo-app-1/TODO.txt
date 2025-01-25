@@ -8,3 +8,6 @@ https://getbootstrap.com/docs/5.3/examples/album/#
 vid "edit" klick, kanske)
 
 måste kunna editera information,text, namn nominera bilden till tävling osv
+
+Kolla upp CDN,behövs för bilder. 
+Cacha Json anrop?
