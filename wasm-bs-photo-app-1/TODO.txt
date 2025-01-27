@@ -13,3 +13,5 @@ Kolla upp CDN,behövs för bilder. Troligen onödigt så här tidigt.
 Cacha Json anrop?
 
 Hover effekt med hand óch lite zoom av kort. Overlay text i vitt över image. Några ikoner kanske, som overlay? Views, osv. Med Tool tip
+
+https://learn.microsoft.com/en-us/azure/cosmos-db/how-to-develop-emulator?tabs=windows%2Ccsharp&pivots=api-mongodb

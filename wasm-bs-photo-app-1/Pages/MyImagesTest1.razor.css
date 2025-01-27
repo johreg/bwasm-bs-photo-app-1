@@ -1,0 +1,9 @@
+﻿.card {
+    transition: transform 0.2s, background-color 0.2s; /* Smooth transition for hover effects */
+}
+
+    .card:hover {
+        cursor: pointer; /* Changes cursor to a hand */
+        background-color: rgba(255, 255, 255, 0.9); /* Makes the card slightly lighter */
+        transform: scale(1.02); /* Optional: Slight zoom effect */
+    }
