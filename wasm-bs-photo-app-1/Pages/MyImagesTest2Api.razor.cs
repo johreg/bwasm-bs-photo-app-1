@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using System.Net.Http.Json;
+using System.Text.Json;
 
 namespace wasm_bs_photo_app_1.Pages
 {
@@ -10,7 +11,8 @@ namespace wasm_bs_photo_app_1.Pages
         bool expanded = false;
         bool isUploading = false;  // To track the upload state
         private string? selectedUrlSnippet;
-      //  ImageBlobFolderStructure? folderStructure;
+        PagedResponse? imageCardPage;
+        //  ImageBlobFolderStructure? folderStructure;
         List<string?>? allImageFolders;
         Dictionary<string, bool>? folderExpandedState = new Dictionary<string, bool>();
         string? userobjectid;
@@ -69,8 +71,19 @@ namespace wasm_bs_photo_app_1.Pages
 
         private async Task ReloadFolderStructureAsync(string userobjectid, string tenantid, HttpClient httpClient)
         {
+            try 
+            { 
             var queryString = $"?TenantId={tenantid}&UserObjectId={userobjectid}";
-            var folderStructure = await httpClient.GetFromJsonAsync<MongoDbUserImageMetadataModel>($"JoretecTestApi/GetMetadata1");
+
+            imageCardPage = await httpClient.GetFromJsonAsync<PagedResponse>($"JoretecTestApi/GetImagesByOwner?ownerUserId=129837109832091");
+
+                var gg = imageCardPage;  
+
+            }
+            catch (Exception e)
+            {
+                var aa = e;
+            }
         //    allImageFolders = folderStructure?.Folders?.Select(f => f.Name).Where(name => name != null).ToList();
 
             /*
