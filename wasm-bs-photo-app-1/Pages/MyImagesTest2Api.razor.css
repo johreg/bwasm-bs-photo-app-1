@@ -1,9 +1,59 @@
-﻿.card {
-    transition: transform 0.2s, background-color 0.2s; /* Smooth transition for hover effects */
+﻿@font-face {
+    font-family: 'Digital-7';
+    src: url('/fonts/digital-7.ttf') format('truetype');
+}
+/*
+.card-img-top {
+    transition: filter 0.3s ease-in-out;
+}
+    */
+    .card-img-top:hover {
+        cursor: pointer; /* Changes cursor to a hand */
+        filter: brightness(1.2); /* Makes the image slightly lighter */
+    }
+image-container {
+    position: relative;
+    display: inline-block;
 }
 
-    .card:hover {
-        cursor: pointer; /* Changes cursor to a hand */
-        background-color: rgba(255, 255, 255, 0.9); /* Makes the card slightly lighter */
-        transform: scale(1.02); /* Optional: Slight zoom effect */
+/* Image Name (Upper Left, Truncated to Half Width) */
+.overlay-text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 50%; /* Limits width to half of the image */
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Truncates long names */
+}
+
+/* Upper Right Icons (Comment, Star, Bell) */
+.overlay-icons {
+    display: flex;
+    gap: 10px;
+}
+
+    /* Icon Adjustments */
+    .overlay-icons i {
+        cursor: pointer;
     }
+
+/* Camera-Style Date (Bottom Right Overlay) */
+.overlay-date {
+    position: absolute; /* Ensures it stays on top of the image */
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Digital-7', sans-serif;
+    font-size: 16px;
+    color: #ff4500;
+    text-shadow: 0px 0px 5px rgba(255, 69, 0, 0.8), 0px 0px 10px rgba(255, 69, 0, 0.6), 0px 0px 20px rgba(255, 69, 0, 0.4);
+    opacity: 0.9;
+    letter-spacing: 2px;
+    pointer-events: none; /* Prevents interaction with the text */
+}

@@ -46,7 +46,7 @@ namespace wasm_bs_photo_app_1.Pages
 
         private void NavigateToImage(int id)
         {
-            NavigationManager.NavigateTo($"/myimagestest1/myimage{id}");
+            NavigationManager.NavigateTo($"/myimagestest2api/myimage{id}");
         }
 
 
