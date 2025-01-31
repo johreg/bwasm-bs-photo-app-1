@@ -2,14 +2,22 @@
     font-family: 'Digital-7';
     src: url('/fonts/digital-7.ttf') format('truetype');
 }
-/*
-.card-img-top {
-    transition: filter 0.3s ease-in-out;
+@font-face {
+    font-family: 'OutlinePixel7-yGMZ';
+    src: url('fonts/OutlinePixel7-yGMZ.ttf') format('truetype');
 }
-    */
+
+@font-face {
+    font-family: 'Tourney-Regular';
+    src: url('fonts/Tourney-Regular.ttf') format('truetype');
+}
+.card-img-top {
+    transition: box-shadow 0.1s ease-in-out;
+}
+
     .card-img-top:hover {
-        cursor: pointer; /* Changes cursor to a hand */
-        filter: brightness(1.2); /* Makes the image slightly lighter */
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adds a soft glow */
     }
 image-container {
     position: relative;
@@ -19,14 +27,14 @@ image-container {
 /* Image Name (Upper Left, Truncated to Half Width) */
 .overlay-text {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 5px;
+    left: 5px;
     max-width: 50%; /* Limits width to half of the image */
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.5);
     color: black;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 2px 3px;
+    border-radius: 3px;
+    font-size: 12px;
     font-weight: bold;
     white-space: nowrap;
     overflow: hidden;
@@ -36,24 +44,29 @@ image-container {
 /* Upper Right Icons (Comment, Star, Bell) */
 .overlay-icons {
     display: flex;
-    gap: 10px;
+    gap: 1px;
+    background: rgba(0, 0, 0, 0.3); /* Subtle dark background */
+    padding: 2px 5px; /* Adjust padding as needed */
+    border-radius: 12px; /* Soft rounded corners */
 }
 
     /* Icon Adjustments */
     .overlay-icons i {
         cursor: pointer;
+        color: white; /* Ensures visibility on dark background */
+        font-size: 1.2rem; /* Adjust size if needed */
     }
 
 /* Camera-Style Date (Bottom Right Overlay) */
 .overlay-date {
     position: absolute; /* Ensures it stays on top of the image */
-    bottom: 10px;
-    right: 10px;
+    bottom: 5px;
+    right: 5px;
     font-family: 'Digital-7', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     color: #ff4500;
     text-shadow: 0px 0px 5px rgba(255, 69, 0, 0.8), 0px 0px 10px rgba(255, 69, 0, 0.6), 0px 0px 20px rgba(255, 69, 0, 0.4);
-    opacity: 0.9;
+    opacity: 1.0;
     letter-spacing: 2px;
     pointer-events: none; /* Prevents interaction with the text */
 }

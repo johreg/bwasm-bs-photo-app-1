@@ -75,7 +75,7 @@
                         <div class="col">
                             <div class="card shadow-sm">
                                 <div class="image-container position-relative">
-                                    <img alt="image" class="card-img-top img-fluid" src="camel.jpg" @onclick="() => NavigateToImage(1)">
+                                    <img alt="image" class="card-img-top img-fluid" src="https://joretecphotos1.blob.core.windows.net/photos/joretec-mini.png" @onclick="() => NavigateToImage(1)">
 
                                     <!-- Image Name (Upper Left, Truncated) -->
                                     <div class="overlay-text text-truncate">VeryLongImageNameThatMightBeTooLong.jpg</div>
@@ -84,8 +84,8 @@
                                     <div class="overlay-icons position-absolute top-0 end-0 d-flex gap-2 p-2">
                                         <!-- Comments -->
                                         <span class="position-relative">
-                                            <i class="fa-regular fa-comment fs-5 text-white"></i>
-                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-1" style="font-size: 0.7rem;">
+                                            <i class="fa-regular fa-comment fs-6 text-white"></i>
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-1" style="font-size: 0.6rem;">
                                                 5
                                                 <span class="visually-hidden">unread comments</span>
                                             </span>
@@ -93,8 +93,8 @@
 
                                         <!-- Rating (Star) -->
                                         <span class="position-relative">
-                                            <i class="fa-regular fa-star fs-5 text-white"></i>
-                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-1" style="font-size: 0.7rem;">
+                                            <i class="fa-regular fa-star fs-6 text-white"></i>
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-1" style="font-size: 0.6rem;">
                                                 4
                                                 <span class="visually-hidden">rating</span>
                                             </span>
@@ -102,8 +102,8 @@
 
                                         <!-- Notifications (Bell) -->
                                         <span class="position-relative">
-                                            <i class="fa-regular fa-bell fs-5 text-white"></i>
-                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-1" style="font-size: 0.7rem;">
+                                            <i class="fa-regular fa-bell fs-6 text-white"></i>
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger p-1" style="font-size: 0.6rem;">
                                                 3
                                                 <span class="visually-hidden">new notifications</span>
                                             </span>
@@ -125,12 +125,17 @@
                                 
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                        <div class="btn-group dropup">
+                                     
+
+                                            <button type="button" class="btn btn-sm btn-outline-secondary  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa-solid fa-tag"></i>
                                                 Tag
                                             </button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                            <ul class="dropdown-menu">
+                                                <li>11</li>
+                                                <li>22</li>
+                                            </ul>
                                     
                                         </div>
                                   
@@ -281,11 +286,13 @@
             </div>
             <div class="modal-body">
                 <div class="input-group">
-                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+              <!--      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">  -->
+                    <InputFile OnChange="HandleFileSelected" />
                  
                 </div>
                 <p>
                 <div class="btn-group">
+
                     <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                        Tag
                     </button>
@@ -299,7 +306,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Upload</button>
+                <button type="button" class="btn btn-primary" @onclick="UploadFile">Upload</button>
             </div>
         </div>
     </div>

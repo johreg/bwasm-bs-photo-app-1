@@ -1,5 +1,6 @@
 ﻿using auth_api_1.Data;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
 using System.Net.Http.Json;
 using System.Text.Json;
@@ -99,6 +100,53 @@ namespace wasm_bs_photo_app_1.Pages
             */
 
         }
+
+
+        private IBrowserFile? selectedFile;
+        private string? FileName;
+
+        private async Task HandleFileSelected(InputFileChangeEventArgs e)
+        {
+            selectedFile = e.File;
+            FileName = selectedFile.Name;
+        }
+
+        private async Task UploadFile()
+        {
+            if (selectedFile is null)
+            {
+                Console.WriteLine("No file selected.");
+                return;
+            }
+
+            try
+            {
+                // Convert file to a stream
+                using var stream = selectedFile.OpenReadStream(10 * 1024 * 1024); // 10MB max size
+                var content = new MultipartFormDataContent
+            {
+                { new StreamContent(stream), "file", selectedFile.Name }
+            };
+
+                // Send to your API
+             //   using var httpClient = new HttpClient();
+                var response = await _httpClient.PostAsync($"JoretecTestApi/UploadNewImageV2", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.WriteLine("Upload successful!");
+                }
+                else
+                {
+                    Console.WriteLine("Upload failed: " + response.ReasonPhrase);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Upload error: {ex.Message}");
+            }
+        }
+
 
     }
 }
