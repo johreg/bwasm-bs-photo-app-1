@@ -23,10 +23,10 @@ namespace auth_api_1.Data
         public MongoId Id { get; set; }
 
         [JsonPropertyName("id")]
-        public long ImageId { get; set; }
+        public MongoId ImageId { get; set; }
 
         [JsonPropertyName("ownerUserId")]
-        public long OwnerUserId { get; set; }
+        public Int64 OwnerUserId { get; set; }
 
         [JsonPropertyName("originalName")]
         public string OriginalName { get; set; }

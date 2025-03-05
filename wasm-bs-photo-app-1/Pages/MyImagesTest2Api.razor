@@ -53,7 +53,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#"><i class="fa-solid fa-arrow-up-from-bracket"></i> Upload</a>
-          
+
                 </li>
             </ul>
             <form role="search">
@@ -108,7 +108,7 @@
                                                 <span class="visually-hidden">new notifications</span>
                                             </span>
                                         </span>
-                         
+
                                     </div>
 
                                     <!-- Retro Camera Date (Bottom Right) -->
@@ -122,11 +122,11 @@
                                             <span class="badge text-bg-dark">Dark</span>
                                         </span>
 
-                                
+
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group dropup">
-                                     
+
 
                                             <button type="button" class="btn btn-sm btn-outline-secondary  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa-solid fa-tag"></i>
@@ -136,11 +136,11 @@
                                                 <li>11</li>
                                                 <li>22</li>
                                             </ul>
-                                    
+
                                         </div>
-                                  
-                                            <button type="button" class="btn btn-sm  btn-outline-secondary"> <i class="fa-regular fa-trash-can"></i></button>
-                                      
+
+                                        <button type="button" class="btn btn-sm  btn-outline-secondary"> <i class="fa-regular fa-trash-can"></i></button>
+
                                     </div>
                                 </div>
                             </div>
@@ -274,8 +274,6 @@
 </div>
 
 <!-- Button trigger modal -->
-
-
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -286,22 +284,36 @@
             </div>
             <div class="modal-body">
                 <div class="input-group">
-              <!--      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">  -->
-                    <InputFile OnChange="HandleFileSelected" />
-                 
+                    <!--      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">  -->
+                    <InputFile OnChange="HandleFileSelected" accept="image/*"  />
+
                 </div>
                 <p>
-                <div class="btn-group">
+                    <div class="btn-group">
 
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       Tag
-                    </button>
-                    <ul class="dropdown-menu">
-                       <li>New Upload</li>
-                        <li>Tag 2</li>
-                    </ul>
-                </div>
-                Dislay name form here...
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tag
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>New Upload</li>
+                            <li>Tag 2</li>
+                        </ul>
+                    </div>
+                    <div class="input-group mb-3">
+
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Display name">
+                            <label for="floatingInputGroup1">Display name</label>
+                        </div>
+                    </div>
+                    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+<datalist id="datalistOptions">
+  <option value="San Francisco"/>
+  <option value="New York"/>
+  <option value="Seattle"/>
+  <option value="Los Angeles"/>
+  <option value="Chicago"/>
+</datalist>
                 </p>
             </div>
             <div class="modal-footer">

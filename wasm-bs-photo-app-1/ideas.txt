@@ -1,3 +1,9 @@
+system tray desktop app. Mirror myImages with thumbnails (like oneDrive), EXIF data upload to metadata 
+
+App för att snabbt kunna browsa igenom (desktop app?) labela och ranka bilder, sedan filtera på den enkelt, få upp rutan med 
+metadata (slutartid,osv så man snabbt kan se vad som var fel), kunna sortera på rankning så man kan göra en andra rank
+av favoriter, tills man hittar de bästa. AI sparar information om rankningar, så att den kan härma filtering efter ett tag?
+
 Filter under my Images (ta fram bilder från avklarade tävlingar, nuvarnade tävlingar osv)
 
 Information på My Images card:

@@ -34,18 +34,19 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script> 
+    <script src="custom-js/uploadImagesModalHelper.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
     <script>
-        window.bootstrap = {
-            Offcanvas: {
-                getOrCreateInstance: (selector, action) => {
-                    const offcanvasElement = document.querySelector(selector);
-                    if (!offcanvasElement) return;
-                    const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
-                    if (action === "hide") offcanvas.hide();
-                }
+        window.bootstrap = window.bootstrap || {}; // Preserve existing Bootstrap object
+        window.bootstrap.Offcanvas = {
+            getOrCreateInstance: (selector, action) => {
+                const offcanvasElement = document.querySelector(selector);
+                if (!offcanvasElement) return;
+                const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+                if (action === "hide") offcanvas.hide();
             }
         };
     </script>

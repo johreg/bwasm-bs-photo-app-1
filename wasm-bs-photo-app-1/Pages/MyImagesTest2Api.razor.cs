@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
 using System.Net.Http.Json;
 using System.Text.Json;
 
+
 namespace wasm_bs_photo_app_1.Pages
 {
+
     public partial class MyImagesTest2Api
     {
         bool expanded = false;
@@ -19,13 +22,13 @@ namespace wasm_bs_photo_app_1.Pages
         string? userobjectid;
         string? tenantid;
         string? currentbase64Image;
-    //    ImageMetadataResponse imageMetadata;
+        //    ImageMetadataResponse imageMetadata;
         string disabledButtonText = "Uploading...";
         string enabledButtonText = "Upload Images";
         HttpClient? _httpClient;
         string selectedFolder = "";
 
-       // FluentInputFile? myFileByBuffer = default!;
+        // FluentInputFile? myFileByBuffer = default!;
         int? progressPercent;
         string? progressTitle;
         bool IsCanceled;
@@ -44,6 +47,8 @@ namespace wasm_bs_photo_app_1.Pages
         [Inject]
         private NavigationManager NavigationManager { get; set; } = default!;
 
+        [Inject]
+        private IJSRuntime JS { get; set; } = default!;
 
         private void NavigateToImage(int id)
         {
@@ -72,20 +77,20 @@ namespace wasm_bs_photo_app_1.Pages
 
         private async Task ReloadFolderStructureAsync(string userobjectid, string tenantid, HttpClient httpClient)
         {
-            try 
-            { 
-            var queryString = $"?TenantId={tenantid}&UserObjectId={userobjectid}";
+            try
+            {
+                var queryString = $"?TenantId={tenantid}&UserObjectId={userobjectid}";
 
-            imageCardPage = await httpClient.GetFromJsonAsync<PagedResponse>($"JoretecTestApi/GetImagesByOwner?ownerUserId=129837109832091");
+                imageCardPage = await httpClient.GetFromJsonAsync<PagedResponse>($"JoretecTestApi/GetImagesByOwner?ownerUserId=129837109832091");
 
-                var gg = imageCardPage;  
+                var gg = imageCardPage;
 
             }
             catch (Exception e)
             {
                 var aa = e;
             }
-        //    allImageFolders = folderStructure?.Folders?.Select(f => f.Name).Where(name => name != null).ToList();
+            //    allImageFolders = folderStructure?.Folders?.Select(f => f.Name).Where(name => name != null).ToList();
 
             /*
             folderExpandedState = new Dictionary<string, bool>();
@@ -126,25 +131,36 @@ namespace wasm_bs_photo_app_1.Pages
                 var content = new MultipartFormDataContent
             {
                 { new StreamContent(stream), "file", selectedFile.Name }
-            };
+                };
+
+
 
                 // Send to your API
-             //   using var httpClient = new HttpClient();
+                //   using var httpClient = new HttpClient();
                 var response = await _httpClient.PostAsync($"JoretecTestApi/UploadNewImageV2", content);
 
                 if (response.IsSuccessStatusCode)
                 {
                     Console.WriteLine("Upload successful!");
+                    await JS.InvokeVoidAsync("closeImageUploadModal");
+                    ClearFileSelection();
                 }
                 else
                 {
                     Console.WriteLine("Upload failed: " + response.ReasonPhrase);
+                    ClearFileSelection();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Upload error: {ex.Message}");
             }
+        }
+
+        private void ClearFileSelection()
+        {
+            selectedFile = null;
+            FileName = null;
         }
 
 
